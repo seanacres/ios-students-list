@@ -10,4 +10,15 @@ import Foundation
 
 struct Student: Codable {
     var name: String
+    var course: String
+    
+    var firstName: String {
+        let splitNames = name.split(separator: " ")
+        return String(splitNames[0])
+    }
+    
+    var lastName: String {
+        let stringComponents = name.components(separatedBy: .whitespaces)
+        return stringComponents.last ?? ""
+    }
 }
